@@ -1,0 +1,111 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="SummonersHQ.Sales"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/greenBG.jpg" Opacity="0.5" />
+        </Grid.Background>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Summoner HQ" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="45.333" Height="59"><Run Text="Riot Store Sales"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        </StackPanel>
+
+        <Grid x:Name="OfflinePanel" Grid.Row="1" Margin="12,0,12,0" Visibility="Collapsed">
+            <TextBlock FontSize="35" TextWrapping="Wrap">
+                Please connect to internet to retrieve data.
+            </TextBlock>
+        </Grid>
+
+        <Grid x:Name="SalesPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+                <StackPanel>
+                    <TextBlock Height="Auto" Margin="8,8,8,0" TextWrapping="Wrap" Text="Sales Duration:"  FontSize="30" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock x:Name="DurationTimeText" Height="32" Margin="8,8,8,0" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Top"/>
+                    
+                    <TextBlock Height="Auto" Margin="10,10" TextWrapping="Wrap" FontSize="30" Text="Champion Sales:" VerticalAlignment="Top" FontWeight="Bold"/>
+
+                    <ListBox x:Name="championSaleListBox" Margin="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="20, 0">
+                                    <StackPanel Orientation="Horizontal" Margin="10, 0">
+                                        <Image Width="100" Height="100" Source="{Binding ImagePath}"/>
+                                        <StackPanel Orientation="Vertical" Margin="20, 0">
+                                            <TextBlock Text="{Binding Name}" Width="300" Height="Auto" FontSize="35" TextAlignment="Left"/>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Image Width="30" Height="30" Source="Images/23px-IpPoints.png"/>
+                                                <TextBlock Text="{Binding IpPrice}" Margin="5,0" Width="65" Height="30" FontSize="25" TextAlignment="Left" Foreground="Yellow" />
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Image Width="30" Height="30" Source="Images/26px-RpPoints.png"/>
+                                                <TextBlock Text="{Binding RpPrice}" Margin="5,0" Width="65" Height="30" FontSize="25" TextAlignment="Left" Foreground="Yellow" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <TextBlock Height="Auto" Margin="10,10" TextWrapping="Wrap" FontSize="30" Text="Skin Sales:" VerticalAlignment="Top" FontWeight="Bold"/>
+
+                    <ListBox x:Name="skinSaleListBox" Margin="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="20, 0">
+                                    <StackPanel Orientation="Horizontal" Margin="10, 0">
+                                        <Image Width="100" Height="100" Source="{Binding ImagePath}"/>
+                                        <StackPanel Orientation="Vertical" Margin="20, 0">
+                                            <TextBlock Text="{Binding ChampName}"  Margin="0,5" Width="300" Height="Auto" FontSize="35" TextAlignment="Left" />
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Image Width="30" Height="30" Source="Images/45px-Mirror_Image.jpg"/>
+                                                <TextBlock Text="{Binding SkinName}" Margin="5,0" TextWrapping="Wrap" Width="270" FontSize="25" TextAlignment="Left" Foreground="Yellow" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Image Width="30" Height="30" Source="Images/26px-RpPoints.png"/>
+                                                <TextBlock Text="{Binding RpPrice}" Margin="5,0" Width="65" Height="30" FontSize="25" TextAlignment="Left" Foreground="Yellow" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

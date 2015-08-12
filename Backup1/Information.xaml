@@ -1,0 +1,169 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="SummonersHQ.Information"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/greenBG.jpg" Opacity="0.5"/>
+        </Grid.Background>
+        
+        <!--Pivot Control-->
+        <controls:Pivot Title="Summoner HQ">
+
+            <controls:PivotItem Header="Updates">
+                <Grid>
+                    <ListBox x:Name="updateListBox" ItemsSource="{Binding}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="10, 10"  >
+                                    <Image Width="60" Height="60" Source="Images/tumblr-icon.png" VerticalAlignment="Top"/>
+                                    <StackPanel Orientation="Vertical" Margin="20, 0, 10, 0">
+                                        <TextBlock Text="{Binding message}" Width="350" Height="Auto" FontSize="22" TextAlignment="Left" TextWrapping="Wrap"/>
+                                        <TextBlock Text="{Binding dateMessage}" Width="350" Height="Auto" FontSize="20" TextAlignment="Left" Foreground="Yellow" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="About">
+                <Grid>
+                    <ScrollViewer HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <StackPanel Height="607" Width="456" Margin="12,0,0,0">
+                            <TextBlock x:Name="aboutLabel" FontSize="26.667" Text="About current version:" FontWeight="Bold" Foreground="Yellow" Margin="0,10" Width="456" TextAlignment="Left"/>
+                            <TextBlock x:Name="aboutDetail" FontSize="21.333" Margin="0,-7,0,10" TextWrapping="Wrap" TextAlignment="Left" Width="350">
+                                <Run Text="Version 2.0.1 (Akali)"/><LineBreak/>
+                                <Run Text="Internet connection is required."/>
+                            </TextBlock>
+                            
+                            <TextBlock x:Name="ArtisticLabel" FontSize="26.667" Text="Artistic Sources:" FontWeight="Bold" Foreground="Yellow" Margin="0,10"/>
+                            <TextBlock x:Name="ArtisticInfo" FontSize="21.333" Width="350" Margin="0,0,0,10" TextWrapping="Wrap">
+                                <Run Text="Fan Art source from "/><LineBreak/><Run Text="www.iambivalenc3.tumblr.com">
+            				    <Run.Foreground>
+            					    <SolidColorBrush Color="{StaticResource PhoneAccentColor}">
+            						    <SolidColorBrush.RelativeTransform>
+            							    <MatrixTransform Matrix="Identity"/>
+            						    </SolidColorBrush.RelativeTransform>
+            						    <SolidColorBrush.Transform>
+            							    <MatrixTransform Matrix="Identity"/>
+            						    </SolidColorBrush.Transform>
+            					    </SolidColorBrush>
+            				    </Run.Foreground>
+            			        </Run><LineBreak/><Run Text="See blog for individual fan art credit and artist information."/>
+                            </TextBlock>
+
+                            <TextBlock x:Name="GroupLabel" FontSize="26.667" Text="Groups and Events:" Foreground="Yellow" FontWeight="Bold" Margin="0,10"/>
+                            <TextBlock x:Name="GroupInfo" FontSize="21.333" Width="350" Margin="0,-7,0,10" TextWrapping="Wrap">
+                                <Run Text="MeetUp groups and events hosted on "/><Run Text="www.meetup.com">
+            				    <Run.Foreground>
+            					    <SolidColorBrush Color="{StaticResource PhoneAccentColor}">
+            						    <SolidColorBrush.RelativeTransform>
+            							    <MatrixTransform Matrix="Identity"/>
+            						    </SolidColorBrush.RelativeTransform>
+            						    <SolidColorBrush.Transform>
+            							    <MatrixTransform Matrix="Identity"/>
+            						    </SolidColorBrush.Transform>
+            					    </SolidColorBrush>
+            				    </Run.Foreground>
+            			        </Run><Run Text=". Create your group and event thru meet up to be seen here."/>
+                            </TextBlock>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="Credits">
+                <Grid>
+                    <ScrollViewer HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <StackPanel Height="607" Width="456" Margin="12,0,0,0">
+                            <TextBlock x:Name="CreditsLabel" FontSize="26.667" Text="Splash Screen Art:" FontWeight="Bold" Foreground="Yellow" Margin="0,0,0,10"/>
+                            <TextBlock x:Name="CreditsInfo" FontSize="21.333" Width="344" TextWrapping="Wrap" Margin="53,0,53,10" Foreground="{StaticResource PhoneForegroundBrush}" Height="96">
+                                <Run Text="Akali Redesign by Hannah515. "/><Run Text="  Check out her work at " /><Run Text="hannah515.deviantart.com">
+            				        <Run.Foreground>
+            					        <SolidColorBrush Color="{StaticResource PhoneAccentColor}">
+            						        <SolidColorBrush.RelativeTransform>
+            							        <MatrixTransform Matrix="Identity"/>
+            						        </SolidColorBrush.RelativeTransform>
+            						        <SolidColorBrush.Transform>
+            							        <MatrixTransform Matrix="Identity"/>
+            						        </SolidColorBrush.Transform>
+            					        </SolidColorBrush>
+            				        </Run.Foreground>
+            			        </Run>
+                            </TextBlock>
+
+
+                            <TextBlock x:Name="IconCreditLabel" FontSize="26.667" Text="Icon Art:" FontWeight="Bold" Foreground="Yellow" Margin="0,0,0,10"/>
+                            <TextBlock x:Name="IconCreditsInfo" FontSize="21.333" Width="350" TextWrapping="Wrap" Margin="53,0,53,10" Foreground="{StaticResource PhoneForegroundBrush}">
+                                <Run Text="Icon art by LilyPichu. Check out her blog at "/>
+                                <Run Text="lilypichu.tumblr.com">
+            				        <Run.Foreground>
+            					        <SolidColorBrush Color="{StaticResource PhoneAccentColor}">
+            						        <SolidColorBrush.RelativeTransform>
+            							        <MatrixTransform Matrix="Identity"/>
+            						        </SolidColorBrush.RelativeTransform>
+            						        <SolidColorBrush.Transform>
+            							        <MatrixTransform Matrix="Identity"/>
+            						        </SolidColorBrush.Transform>
+            					        </SolidColorBrush>
+            				        </Run.Foreground>
+            			        </Run>
+                            </TextBlock>
+
+
+                            <TextBlock x:Name="BackgroundLabel" FontSize="26.667" Text="Background Art:" FontWeight="Bold" Foreground="Yellow" Margin="0,0,0,10"/>
+                            <TextBlock x:Name="BackgroundInfo" FontSize="21.333" Width="350" TextWrapping="Wrap" Margin="53,0,53,10" Foreground="{StaticResource PhoneForegroundBrush}">
+                                <Run Text="Background from 鬼灵刺客 阿卡利 "/><LineBreak/><Run Text="pixiv.net/member.php?id=3813913">
+                                <Run.Foreground>
+            					        <SolidColorBrush Color="{StaticResource PhoneAccentColor}">
+            						        <SolidColorBrush.RelativeTransform>
+            							        <MatrixTransform Matrix="Identity"/>
+            						        </SolidColorBrush.RelativeTransform>
+            						        <SolidColorBrush.Transform>
+            							        <MatrixTransform Matrix="Identity"/>
+            						        </SolidColorBrush.Transform>
+            					        </SolidColorBrush>
+            				        </Run.Foreground>
+            			        </Run>
+                            </TextBlock>
+
+                            <TextBlock x:Name="CreditsLabel_Copy" FontSize="26.667" Text="Other Credits:" FontWeight="Bold" Foreground="Yellow" Margin="0,0,0,10"/>
+                            <TextBlock x:Name="CreditsInfo_Copy" FontSize="21.333" Width="350" TextWrapping="Wrap" Margin="53,0,53,10">
+                                <Run Text="For individual fan art source, please see "/><Run Text="iambivalenc3.tumblr.com">
+                                <Run.Foreground>
+            					        <SolidColorBrush Color="{StaticResource PhoneAccentColor}">
+            						        <SolidColorBrush.RelativeTransform>
+            							        <MatrixTransform Matrix="Identity"/>
+            						        </SolidColorBrush.RelativeTransform>
+            						        <SolidColorBrush.Transform>
+            							        <MatrixTransform Matrix="Identity"/>
+            						        </SolidColorBrush.Transform>
+            					        </SolidColorBrush>
+            				        </Run.Foreground>
+            			        </Run>
+                            </TextBlock>
+                            
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PivotItem>
+            
+            
+        </controls:Pivot>
+    </Grid>
+</phone:PhoneApplicationPage>

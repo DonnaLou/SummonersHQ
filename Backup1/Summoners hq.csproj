@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4BF4D42-B34E-4A08-8259-2C067C7B83CA}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SummonersHQ</RootNamespace>
+    <AssemblyName>SummonesrHQ</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SummonersHQ.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SummonersHQ.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.30816.0</ExpressionBlendVersion>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>E:\FromDesktop\Projects\PhoneApp1\Backup\PhoneApp1\</UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\HtmlAgilityPack.1.4.5\sl4-windowsphone71\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Advertising.Mobile, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.Advertising.Mobile.UI, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.Devices.Sensors" />
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Json45r11\Bin\WindowsPhone\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Device" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.XPath">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Xml.XPath.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BanChart.xaml.cs">
+      <DependentUpon>BanChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BanList.cs" />
+    <Compile Include="ChampionSale.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="EventsListPage.xaml.cs">
+      <DependentUpon>EventsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventsPage.xaml.cs">
+      <DependentUpon>EventsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FanArtGallery.xaml.cs">
+      <DependentUpon>FanArtGallery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FAQPage.xaml.cs">
+      <DependentUpon>FAQPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Group.cs" />
+    <Compile Include="GroupListPage.xaml.cs">
+      <DependentUpon>GroupListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupsPage.xaml.cs">
+      <DependentUpon>GroupsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Information.xaml.cs">
+      <DependentUpon>Information.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasteryPage.xaml.cs">
+      <DependentUpon>MasteryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasteryTextInfo.cs" />
+    <Compile Include="Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatchList.xaml.cs">
+      <DependentUpon>PatchList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatchPage.xaml.cs">
+      <DependentUpon>PatchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FanArtGalleryMore.xaml.cs">
+      <DependentUpon>FanArtGalleryMore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales.xaml.cs">
+      <DependentUpon>Sales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Support.xaml.cs">
+      <DependentUpon>Support.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="BanChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EventsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EventsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FanArtGallery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FAQPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GroupListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GroupsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Information.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasteryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PatchList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PatchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FanArtGalleryMore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sales.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Support.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="summonersHQ.png" />
+    <Resource Include="Images\annieIcon.png" />
+    <Resource Include="Images\cupcakeIcon.png" />
+    <Resource Include="Images\teemoIcon.png" />
+    <Resource Include="Images\hppot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="summonersHQ62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tumblr-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\akaliBkGround.jpg" />
+    <Resource Include="Images\akaliFrontArt.png" />
+    <Resource Include="Images\akaliGallaryStart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\greenBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kogBtn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\wwEnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\teemoHut234.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\45px-Mirror_Image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\23px-IpPoints.png" />
+    <Resource Include="Images\26px-RpPoints.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\120px-ProfileIcon66.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\120px-ProfileIcon11.jpg" />
+    <Resource Include="Images\120px-ProfileIcon13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DefenseMastery.png" />
+    <Resource Include="Images\OffenseMastery.png" />
+    <Resource Include="Images\UtilityMastery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Archmage_Mastery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ChampionSquare120\Ahri_Square_0.png" />
+    <Resource Include="ChampionSquare120\Akali_Square_0.png" />
+    <Resource Include="ChampionSquare120\Alistar_Square_0.png" />
+    <Resource Include="ChampionSquare120\Amumu_Square_0.png" />
+    <Resource Include="ChampionSquare120\Anivia_Square_0.png" />
+    <Resource Include="ChampionSquare120\Annie_Square_0.png" />
+    <Resource Include="ChampionSquare120\Ashe_Square_0.png" />
+    <Resource Include="ChampionSquare120\Blitzcrank_Square_0.png" />
+    <Resource Include="ChampionSquare120\Brand_Square_0.png" />
+    <Resource Include="ChampionSquare120\Caitlyn_Square_0.png" />
+    <Resource Include="ChampionSquare120\Cassiopeia_Square_0.png" />
+    <Resource Include="ChampionSquare120\Chogath_Square_0.png" />
+    <Resource Include="ChampionSquare120\Corki_Square_0.png" />
+    <Resource Include="ChampionSquare120\Darius_Square_0.png" />
+    <Resource Include="ChampionSquare120\Diana_Square_0.png" />
+    <Resource Include="ChampionSquare120\Draven_Square_0.png" />
+    <Resource Include="ChampionSquare120\DrMundo_Square_0.png" />
+    <Resource Include="ChampionSquare120\Elise_Square_0.png" />
+    <Resource Include="ChampionSquare120\Evelynn_Square_0.png" />
+    <Resource Include="ChampionSquare120\Ezreal_Square_0.png" />
+    <Resource Include="ChampionSquare120\Fiddlesticks_Square_0.png" />
+    <Resource Include="ChampionSquare120\Fiora_Square_0.png" />
+    <Resource Include="ChampionSquare120\Fizz_square_0.png" />
+    <Resource Include="ChampionSquare120\Galio_Square_0.png" />
+    <Resource Include="ChampionSquare120\Gangplank_Square_0.png" />
+    <Resource Include="ChampionSquare120\Garen_Square_0.png" />
+    <Resource Include="ChampionSquare120\Gragas_Square_0.png" />
+    <Resource Include="ChampionSquare120\Graves_Square_0.png" />
+    <Resource Include="ChampionSquare120\Hecarim_Square_0.png" />
+    <Resource Include="ChampionSquare120\Heimerdinger_Square_0.png" />
+    <Resource Include="ChampionSquare120\Irelia_Square_0.png" />
+    <Resource Include="ChampionSquare120\Janna_Square_0.png" />
+    <Resource Include="ChampionSquare120\JarvanIV_Square_0.png" />
+    <Resource Include="ChampionSquare120\Jax_Square_0.png" />
+    <Resource Include="ChampionSquare120\Jayce_Square_0.png" />
+    <Resource Include="ChampionSquare120\Karma_Square_0.png" />
+    <Resource Include="ChampionSquare120\Karthus_Square_0.png" />
+    <Resource Include="ChampionSquare120\Kassadin_Square_0.png" />
+    <Resource Include="ChampionSquare120\Katarina_Square_0.png" />
+    <Resource Include="ChampionSquare120\Kayle_Square_0.png" />
+    <Resource Include="ChampionSquare120\Kennen_Square_0.png" />
+    <Resource Include="ChampionSquare120\Khazix_Square_0.png" />
+    <Resource Include="ChampionSquare120\KogMaw_Square_0.png" />
+    <Resource Include="ChampionSquare120\Leblanc_Square_0.png" />
+    <Resource Include="ChampionSquare120\LeeSin_Square_0.png" />
+    <Resource Include="ChampionSquare120\Leona_Square_0.png" />
+    <Resource Include="ChampionSquare120\Lulu_Square_0.png" />
+    <Resource Include="ChampionSquare120\Lux_Square_0.png" />
+    <Resource Include="ChampionSquare120\Malphite_Square_0.png" />
+    <Resource Include="ChampionSquare120\Malzahar_Square_0.png" />
+    <Resource Include="ChampionSquare120\Maokai_Square_0.png" />
+    <Resource Include="ChampionSquare120\MasterYi_Square_0.png" />
+    <Resource Include="ChampionSquare120\MissFortune_Square_0.png" />
+    <Resource Include="ChampionSquare120\MonkeyKing_Square_0.png" />
+    <Resource Include="ChampionSquare120\Mordekaiser_Square_0.png" />
+    <Resource Include="ChampionSquare120\Morgana_Square_0.png" />
+    <Resource Include="ChampionSquare120\Nami_Square_0.png" />
+    <Resource Include="ChampionSquare120\Nasus_Square_0.png" />
+    <Resource Include="ChampionSquare120\Nautilus_Square_0.png" />
+    <Resource Include="ChampionSquare120\Nidalee_Square_0.png" />
+    <Resource Include="ChampionSquare120\Nocturne_Square_0.png" />
+    <Resource Include="ChampionSquare120\Nunu_Square_0.png" />
+    <Resource Include="ChampionSquare120\Olaf_Square_0.png" />
+    <Resource Include="ChampionSquare120\Orianna_Square_0.png" />
+    <Resource Include="ChampionSquare120\Pantheon_Square_0.png" />
+    <Resource Include="ChampionSquare120\Poppy_Square_0.png" />
+    <Resource Include="ChampionSquare120\Rammus_Square_0.png" />
+    <Resource Include="ChampionSquare120\Random_0.jpg" />
+    <Resource Include="ChampionSquare120\Renekton_Square_0.png" />
+    <Resource Include="ChampionSquare120\Rengar_Square_0.png" />
+    <Resource Include="ChampionSquare120\Riven_Square_0.png" />
+    <Resource Include="ChampionSquare120\Rumble_Square_0.png" />
+    <Resource Include="ChampionSquare120\Ryze_Square_0.png" />
+    <Resource Include="ChampionSquare120\Sejuani_Square_0.png" />
+    <Resource Include="ChampionSquare120\Shaco_Square_0.png" />
+    <Resource Include="ChampionSquare120\Shen_Square_0.png" />
+    <Resource Include="ChampionSquare120\Shyvana_Square_0.png" />
+    <Resource Include="ChampionSquare120\Singed_Square_0.png" />
+    <Resource Include="ChampionSquare120\Sion_Square_0.png" />
+    <Resource Include="ChampionSquare120\Sivir_Square_0.png" />
+    <Resource Include="ChampionSquare120\Skarner_Square_0.png" />
+    <Resource Include="ChampionSquare120\Sona_Square_0.png" />
+    <Resource Include="ChampionSquare120\Soraka_Square_0.png" />
+    <Resource Include="ChampionSquare120\Swain_Square_0.png" />
+    <Resource Include="ChampionSquare120\Syndra_Square_0.png" />
+    <Resource Include="ChampionSquare120\Talon_Square_0.png" />
+    <Resource Include="ChampionSquare120\Taric_Square_0.png" />
+    <Resource Include="ChampionSquare120\Teemo_Square_0.png" />
+    <Resource Include="ChampionSquare120\Tristana_Square_0.png" />
+    <Resource Include="ChampionSquare120\Trundle_Square_0.png" />
+    <Resource Include="ChampionSquare120\Tryndamere_Square_0.png" />
+    <Resource Include="ChampionSquare120\TwistedFate_Square_0.png" />
+    <Resource Include="ChampionSquare120\Twitch_Square_0.png" />
+    <Resource Include="ChampionSquare120\Udyr_Square_0.png" />
+    <Resource Include="ChampionSquare120\Urgot_Square_0.png" />
+    <Resource Include="ChampionSquare120\Varus_Square_0.png" />
+    <Resource Include="ChampionSquare120\Vayne_Square_0.png" />
+    <Resource Include="ChampionSquare120\Veigar_Square_0.png" />
+    <Resource Include="ChampionSquare120\Viktor_Square_0.png" />
+    <Resource Include="ChampionSquare120\Vi_Square_0.png" />
+    <Resource Include="ChampionSquare120\Vladimir_Square_0.png" />
+    <Resource Include="ChampionSquare120\Volibear_Square_0.png" />
+    <Resource Include="ChampionSquare120\Warwick_Square_0.png" />
+    <Resource Include="ChampionSquare120\Xerath_Square_0.png" />
+    <Resource Include="ChampionSquare120\XinZhao_Square_0.png" />
+    <Resource Include="ChampionSquare120\Yorick_Square_0.png" />
+    <Resource Include="ChampionSquare120\Zed_Square_0.png" />
+    <Resource Include="ChampionSquare120\Ziggs_Square_0.png" />
+    <Resource Include="ChampionSquare120\Zilean_Square_0.png" />
+    <Resource Include="ChampionSquare120\Zyra_Square_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ChampionSquare120\Wukong_Square_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\120px-ProfileIcon33.jpg" />
+    <Resource Include="Images\120px-ProfileIcon34.jpg" />
+    <Resource Include="Images\120px-ProfileIcon36.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\runepage_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\runepages_bg.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

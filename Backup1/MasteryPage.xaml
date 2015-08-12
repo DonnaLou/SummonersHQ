@@ -1,0 +1,166 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="SummonersHQ.MasteryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Resources>
+		<Style x:Key="RoundButton" TargetType="Button">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
+			<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
+			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
+			<Setter Property="Padding" Value="10,3,10,5"/>
+		</Style>
+	</phone:PhoneApplicationPage.Resources>
+    
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+    
+        <!--Pivot Control-->
+
+        <controls:Pivot Title="" Margin="-57,-57">
+            <controls:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Visibility="Collapsed"/>                  
+                </DataTemplate>
+            </controls:Pivot.HeaderTemplate>
+            
+            <!--Offense mastery page pivot-->
+            <controls:PivotItem Margin="0" Width="480" Height="750" >
+                <Grid>
+                    <Grid x:Name="OffenseOverlay" Canvas.ZIndex="2" Width="480" Tap="CloseOverlay" Tag="Off" Visibility="Collapsed">
+                        <Grid Background="{StaticResource PhoneBackgroundBrush}" Opacity=".6"/>
+                        <Border VerticalAlignment="Center" BorderThickness="2"
+                            Background="{StaticResource PhoneBackgroundBrush}" BorderBrush="{StaticResource PhoneForegroundBrush}"
+                            CornerRadius="5" Visibility="Visible" Margin="40,0" >
+                            <StackPanel VerticalAlignment="Center" Margin="25,25">
+                                <TextBlock x:Name="OffenseTitle" FontWeight="Bold" FontSize="35" TextWrapping="Wrap" Margin="8,0,0,0" />
+                                <TextBlock x:Name="OffenseDesc" FontSize="25" TextWrapping="Wrap" Margin="8,0" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <Image Source="Images/OffenseMastery.png" Width="480" Margin="0" Height="750" />
+                    <TextBlock x:Name="Wrath" HorizontalAlignment="Left" Height="88" Margin="30,2,0,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="Wrath"/>
+                    <TextBlock x:Name="Fury" HorizontalAlignment="Left" Height="88" Margin="140,2,0,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="Fury"/>
+                    <TextBlock x:Name="Sorcery" HorizontalAlignment="Right" Height="88" Margin="0,5,144,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="Sorcery"/>
+                    <TextBlock x:Name="Butcher" HorizontalAlignment="Right" Height="88" Margin="0,2,32,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="Butcher"/>
+                    <TextBlock x:Name="Deadliness" HorizontalAlignment="Left" Height="88" Margin="140,130,0,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="Deadliness"/>
+                    <TextBlock x:Name="Blast" HorizontalAlignment="Right" Height="88" Margin="0,130,144,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="Blast"/>
+                    <TextBlock x:Name="Destruction" HorizontalAlignment="Right" Height="88" Margin="0,130,32,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="Destruction"/>
+                    <TextBlock x:Name="Havoc" HorizontalAlignment="Left" Height="96" Margin="30,258,0,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="Havoc"/>
+                    <TextBlock x:Name="WeaponExp" HorizontalAlignment="Left" Height="96" Margin="140,258,0,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="WeaponExp"/>
+                    <TextBlock x:Name="ArcaneKnow" HorizontalAlignment="Right" Height="96" Margin="0,258,144,0" VerticalAlignment="Top" Width="88" Tap="ShowOffenseOverlay" Tag="ArcaneKnow"/>
+                    <TextBlock x:Name="Lethality" HorizontalAlignment="Left" Height="96" Margin="30,0,0,268" VerticalAlignment="Bottom" Width="88" Tap="ShowOffenseOverlay" Tag="Lethality"/>
+                    <TextBlock x:Name="BruteForce" HorizontalAlignment="Left" Height="96" Margin="140,0,0,268" VerticalAlignment="Bottom" Width="88" Tap="ShowOffenseOverlay" Tag="BruteForce"/>
+                    <TextBlock x:Name="MentalForce" HorizontalAlignment="Right" Height="96" Margin="0,0,144,268" VerticalAlignment="Bottom" Width="88" Tap="ShowOffenseOverlay" Tag="MentalForce"/>
+                    <TextBlock x:Name="Spellsword" HorizontalAlignment="Right" Height="96" Margin="0,0,32,268" VerticalAlignment="Bottom" Width="88" Tap="ShowOffenseOverlay" Tag="Spellsword"/>
+                    <TextBlock x:Name="Frenzy" HorizontalAlignment="Left" Height="96" Margin="30,0,0,140" VerticalAlignment="Bottom" Width="88" Tap="ShowOffenseOverlay" Tag="Frenzy"/>
+                    <TextBlock x:Name="Sunder" HorizontalAlignment="Left" Height="96" Margin="136,0,0,140" VerticalAlignment="Bottom" Width="88" Tap="ShowOffenseOverlay" Tag="Sunder"/>
+                    <TextBlock x:Name="Archmage" HorizontalAlignment="Right" Height="96" Margin="0,0,144,140" VerticalAlignment="Bottom" Width="88" Tap="ShowOffenseOverlay" Tag="Archmage"/>
+                    <TextBlock x:Name="Executioner" HorizontalAlignment="Left" Height="92" Margin="136,0,0,8" VerticalAlignment="Bottom" Width="88" Tap="ShowOffenseOverlay" Tag="Executioner"/>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Defense mastery page pivot-->
+            <controls:PivotItem>
+                <Grid>
+                    <Grid x:Name="DefenseOverlay" Visibility="Collapsed" Canvas.ZIndex="2" Width="480" Tap="CloseOverlay" Tag="Def">
+                        <Grid Background="{StaticResource PhoneBackgroundBrush}" Opacity=".6"/>
+                        <Border VerticalAlignment="Center" BorderThickness="2"
+                            Background="{StaticResource PhoneBackgroundBrush}" BorderBrush="{StaticResource PhoneForegroundBrush}"
+                            CornerRadius="5" Visibility="Visible" Margin="40,0" >
+                            <StackPanel VerticalAlignment="Center" Margin="25,25">
+                                <TextBlock x:Name="DefenseTitle" FontWeight="Bold" FontSize="35" TextWrapping="Wrap" Margin="8,0,0,0" />
+                                <TextBlock x:Name="DefenseDesc" FontSize="25" TextWrapping="Wrap" Margin="8,0" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <Image Source="Images/DefenseMastery.png" Width="480" Margin="0" Height="750" />
+                    <TextBlock x:Name="Resolve" HorizontalAlignment="Left" Height="92" Margin="77,47,0,0"  VerticalAlignment="Top" Width="88" Tap="ShowDefenseOverlay" Tag="Resolve"/>
+                    <TextBlock x:Name="Perseverance" HorizontalAlignment="Left" Height="92" Margin="181,47,0,0"  VerticalAlignment="Top" Width="96" Tap="ShowDefenseOverlay" Tag="Perseverance"/>
+                    <TextBlock x:Name="Durability" HorizontalAlignment="Right" Height="92" Margin="0,47,181,0"  VerticalAlignment="Top" Width="96" Tap="ShowDefenseOverlay" Tag="Durability"/>
+                    <TextBlock x:Name="ToughSkin" HorizontalAlignment="Right" Height="92" Margin="0,47,77,0"  VerticalAlignment="Top" Width="88" Tap="ShowDefenseOverlay" Tag="ToughSkin"/>
+                    <TextBlock x:Name="Hardiness" HorizontalAlignment="Left" Height="88" Margin="77,179,0,0"  VerticalAlignment="Top" Width="88" Tap="ShowDefenseOverlay" Tag="Hardiness"/>
+                    <TextBlock x:Name="Resistance" HorizontalAlignment="Left" Height="88" Margin="181,179,0,0"  VerticalAlignment="Top" Width="96" Tap="ShowDefenseOverlay" Tag="Resistance"/>
+                    <TextBlock x:Name="BladedArmor" HorizontalAlignment="Right" Height="88" Margin="0,179,77,0"  VerticalAlignment="Top" Width="88" Tap="ShowDefenseOverlay" Tag="BladedArmor"/>
+                    <TextBlock x:Name="Unyielding" HorizontalAlignment="Left" Height="96" Margin="77,307,0,0"  VerticalAlignment="Top" Width="80" Tap="ShowDefenseOverlay" Tag="BladedArmor"/>
+                    <TextBlock x:Name="Relentless" HorizontalAlignment="Left" Height="96" Margin="181,307,0,0"  VerticalAlignment="Top" Width="96" Tap="ShowDefenseOverlay" Tag="Relentless"/>
+                    <TextBlock x:Name="VeteransScar" HorizontalAlignment="Right" Height="88" Margin="0,307,181,0"  VerticalAlignment="Top" Width="96" Tap="ShowDefenseOverlay" Tag="VeteransScar"/>
+                    <TextBlock x:Name="Safeguard" HorizontalAlignment="Right" Height="88" Margin="0,307,77,0"  VerticalAlignment="Top" Width="88" Tap="ShowDefenseOverlay" Tag="Safeguard"/>
+                    <TextBlock x:Name="Block" HorizontalAlignment="Left" Height="80" Margin="77,0,0,321"  VerticalAlignment="Bottom" Width="88" Tap="ShowDefenseOverlay" Tag="Block"/>
+                    <TextBlock x:Name="Tenacious" HorizontalAlignment="Left" Height="80" Margin="181,0,0,321"  VerticalAlignment="Bottom" Width="96" Tap="ShowDefenseOverlay" Tag="Tenacious"/>
+                    <TextBlock x:Name="Juggernaut" HorizontalAlignment="Right" Height="80" Margin="0,0,181,321"  VerticalAlignment="Bottom" Width="96" Tap="ShowDefenseOverlay" Tag="Juggernaut"/>
+                    <TextBlock x:Name="Defender" HorizontalAlignment="Left" Height="96" Margin="77,0,0,185"  VerticalAlignment="Bottom" Width="88" Tap="ShowDefenseOverlay" Tag="Defender"/>
+                    <TextBlock x:Name="LegendaryArmor" HorizontalAlignment="Left" Height="96" Margin="181,0,0,185"  VerticalAlignment="Bottom" Width="96" Tap="ShowDefenseOverlay" Tag="LegendaryArmor"/>
+                    <TextBlock x:Name="GoodHands" HorizontalAlignment="Right" Height="96" Margin="0,0,181,185"  VerticalAlignment="Bottom" Width="88" Tap="ShowDefenseOverlay" Tag="GoodHands"/>
+                    <TextBlock x:Name="ReinforcedArmor" HorizontalAlignment="Right" Height="96" Margin="0,0,69,185"  VerticalAlignment="Bottom" Width="96" Tap="ShowDefenseOverlay" Tag="ReinforcedArmor"/>
+                    <TextBlock x:Name="HonorGuard" HorizontalAlignment="Left" Height="88" Margin="181,0,0,57"  VerticalAlignment="Bottom" Width="96" Tap="ShowDefenseOverlay" Tag="HonorGuard"/>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Utility mastery page pivot-->
+            <controls:PivotItem >
+                <Grid>
+                    <Grid x:Name="UtilityOverlay" Canvas.ZIndex="2" Width="480" Visibility="Collapsed" Tap="CloseOverlay" Tag="Util">
+                        <Grid Background="{StaticResource PhoneBackgroundBrush}" Opacity=".6"/>
+                        <Border VerticalAlignment="Center" BorderThickness="2"
+                            Background="{StaticResource PhoneBackgroundBrush}" BorderBrush="{StaticResource PhoneForegroundBrush}"
+                            CornerRadius="5" Visibility="Visible" Margin="40,0" >
+                            <StackPanel VerticalAlignment="Center" Margin="25,25">
+                                <TextBlock x:Name="UtilTitle" FontWeight="Bold" FontSize="35" TextWrapping="Wrap" Margin="8,0,0,0" />
+                                <TextBlock x:Name="UtilDesc" FontSize="25" TextWrapping="Wrap" Margin="8,0" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <Image Source="Images/UtilityMastery.png" Width="480" Margin="0" Height="750" />
+                    <TextBlock x:Name="Insight" HorizontalAlignment="Left" Height="92" Margin="77,47,0,0"  VerticalAlignment="Top" Width="88" Tap="ShowUtilityOverlay" Tag="Insight"/>
+                    <TextBlock x:Name="Wanderer" HorizontalAlignment="Left" Height="92" Margin="181,47,0,0"  VerticalAlignment="Top" Width="96" Tap="ShowUtilityOverlay" Tag="Wanderer"/>
+                    <TextBlock x:Name="Mediation" HorizontalAlignment="Right" Height="92" Margin="0,47,189,0"  VerticalAlignment="Top" Width="80" Tap="ShowUtilityOverlay" Tag="Mediation"/>
+                    <TextBlock x:Name="ImprovedRecall" HorizontalAlignment="Right" Height="92" Margin="0,47,69,0"  VerticalAlignment="Top" Width="96" Tap="ShowUtilityOverlay" Tag="ImprovedRecall"/>
+                    <TextBlock x:Name="Scout" HorizontalAlignment="Left" Height="88" Margin="77,179,0,0"  VerticalAlignment="Top" Width="88" Tap="ShowUtilityOverlay" Tag="Scout"/>
+                    <TextBlock x:Name="Mastermind" HorizontalAlignment="Left" Height="88" Margin="181,179,0,0"  VerticalAlignment="Top" Width="96" Tap="ShowUtilityOverlay" Tag="Mastermind"/>
+                    <TextBlock x:Name="ExpandedMind" HorizontalAlignment="Right" Height="88" Margin="0,179,181,0"  VerticalAlignment="Top" Width="88" Tap="ShowUtilityOverlay" Tag="ExpandedMind"/>
+                    <TextBlock x:Name="Artificer" HorizontalAlignment="Right" Height="88" Margin="0,179,77,0"  VerticalAlignment="Top" Width="88" Tap="ShowUtilityOverlay" Tag="Artificer"/>
+                    <TextBlock x:Name="Greed" HorizontalAlignment="Left" Height="88" Margin="77,307,0,0"  VerticalAlignment="Top" Width="88" Tap="ShowUtilityOverlay" Tag="Greed"/>
+                    <TextBlock x:Name="RunicAffinity" HorizontalAlignment="Left" Height="88" Margin="181,307,0,0"  VerticalAlignment="Top" Width="96" Tap="ShowUtilityOverlay" Tag="RunicAffinity"/>
+                    <TextBlock x:Name="Vampirism" HorizontalAlignment="Right" Height="88" Margin="0,307,189,0"  VerticalAlignment="Top" Width="80" Tap="ShowUtilityOverlay" Tag="Vampirism"/>
+                    <TextBlock x:Name="Biscuiteer" HorizontalAlignment="Right" Height="88" Margin="0,307,77,0"  VerticalAlignment="Top" Width="88" Tap="ShowUtilityOverlay" Tag="Biscuiteer"/>
+                    <TextBlock x:Name="Wealth" HorizontalAlignment="Left" Height="88" Margin="77,0,0,321"  VerticalAlignment="Bottom" Width="88" Tap="ShowUtilityOverlay" Tag="Wealth"/>
+                    <TextBlock x:Name="Awareness" HorizontalAlignment="Left" Height="96" Margin="181,0,0,313"  VerticalAlignment="Bottom" Width="96" Tap="ShowUtilityOverlay" Tag="Awareness"/>
+                    <TextBlock x:Name="StrengthOfSpirit" HorizontalAlignment="Right" Height="96" Margin="0,0,189,313"  VerticalAlignment="Bottom" Width="80" Tap="ShowUtilityOverlay" Tag="StrengthOfSpirit"/>
+                    <TextBlock x:Name="Explorer" HorizontalAlignment="Right" Height="88" Margin="0,0,77,321"  VerticalAlignment="Bottom" Width="88" Tap="ShowUtilityOverlay" Tag="Explorer"/>
+                    <TextBlock x:Name="Pickpocket" HorizontalAlignment="Left" Height="88" Margin="77,0,0,185"  VerticalAlignment="Bottom" Width="88" Tap="ShowUtilityOverlay" Tag="Pickpocket"/>
+                    <TextBlock x:Name="Intelligence" HorizontalAlignment="Left" Height="88" Margin="181,0,0,185"  VerticalAlignment="Bottom" Width="96" Tap="ShowUtilityOverlay" Tag="Intelligence"/>
+                    <TextBlock x:Name="Nimble" HorizontalAlignment="Left" Height="88" Margin="181,0,0,57"  VerticalAlignment="Bottom" Width="96" Tap="ShowUtilityOverlay" Tag="Nimble"/>
+                </Grid>
+            </controls:PivotItem>
+
+        </controls:Pivot>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+    
+</phone:PhoneApplicationPage>
